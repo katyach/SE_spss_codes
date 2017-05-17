@@ -1,0 +1,16 @@
+SORT CASES BY ID Utilization.
+CASESTOVARS 
+  /ID=ID 
+  /INDEX=UTILIZATION TEST_NAME 
+  /GROUPBY=INDEX.
+if NOT missing (Diabetes) DM=1.
+execute.
+if NOT missing (V41) DM=1.
+execute.
+
+DATASET ACTIVATE DataSet6.
+COMPUTE HDLTC_ratio_diff=HDLTC_Ratio_post-HDLTC_Ratio_pre.
+EXECUTE.
+COMPUTE HDLTC_ratio_diff=HDLTC_Ratio_post-HDLTC_Ratio_pre.
+EXECUTE.
+ 
