@@ -19,6 +19,7 @@ RENAME VARIABLES (N_BREAK=N_Hospitalizations).
 
               *OUTPATIENTS SEPARATED by ED and general.
 *outpatients - just ED visits - aggregated and removed "others".
+
 SORT CASES BY ID(A) DATE_BEHIND(A) UTILIZATION(A) ABSTRACT_TYPE(A).
 
 AGGREGATE
