@@ -1,0 +1,23 @@
+
+DELETING CASES.
+*deleting some cases.
+*full example: 
+
+RECODE ID (ELSE=0) INTO DELETE. 
+VARIABLE LABELS DELETE 'case to be deleted?'. 
+EXECUTE. 
+FORMATS DELETE (F1.0). 
+VARIABLE WIDTH DELETE (11). 
+VALUE LABELS DELETE 0 "no, keep it" 
+ 1 "yes, delete". 
+
+DO IF (ANY(ID,123,457,679,2207)). 
+RECODE DELETE (ELSE=1). 
+END IF. 
+EXECUTE. 
+
+FILTER OFF. 
+USE ALL. 
+SELECT IF (DELETE = 0). 
+EXECUTE. 
+
