@@ -1,0 +1,9 @@
+*display missing values for one command, then run cross-tabs.
+TEMPORARY. 
+recode baseline_exer_cat exercise_LOCF (SYSMIS=-99).
+
+CROSSTABS  baseline_exer_cat  BY exercise_LOCF
+ /FORMAT=AVALUE TABLES
+  /CELLS=COUNT
+  /COUNT ROUND CELL
+/BARCHART FREQ.  
